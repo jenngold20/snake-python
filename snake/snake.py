@@ -10,7 +10,7 @@ black = (0, 0, 0)
 red = (213, 50, 80)
 green = (0, 255, 0)
 blue = (50, 153, 213)
-
+purple = (156, 107, 165)
 
 dis_width = 800
 dis_height = 600
@@ -29,7 +29,7 @@ score_font = pygame.font.SysFont(None, 35)
 
 def our_snake(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(dis, green, [x[0], x[1], snake_block, snake_block])
 
 
 def message(msg, color):
@@ -57,7 +57,7 @@ def game_loop():
 
         while game_close == True:
             dis.fill(blue)
-            message("Perdiste! Apretá Q-Para salir o C- Para intentarlo de nuevo", red)
+            message("Perdiste! Apretá Q-Salir o C-Reintentar", purple)
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -90,7 +90,7 @@ def game_loop():
         x1 += x1_change
         y1 += y1_change
         dis.fill(blue)
-        pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
+        pygame.draw.rect(dis, red, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
         snake_Head.append(y1)
